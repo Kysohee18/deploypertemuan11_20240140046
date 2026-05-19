@@ -27,7 +27,7 @@ public class SecurityConfig {
 
         return username -> {
 
-            com.example.p12.model.User user = userRepository.findByUsername(username).
+            com.example.demo.model.User user = userRepository.findByUsername(username).
                     orElseThrow(() -> new UsernameNotFoundException("User tidak ditemukan"));
 
             return User
