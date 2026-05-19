@@ -1,4 +1,10 @@
 package com.example.demo.model.dto;
 
+import lombok.Data;
+
 public class RegisterRequest {
+        private String username;
+        private String password;
+        private String nama;
+        private String alamat;
 }
