@@ -15,5 +15,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AuthController {
     private final AuthService authService;
     @GetMapping("/register")
-    
+    public String registerPage(Model model) {
+        model.addAttribute( "request", new RegisterRequest());
+        return "register";
+    }
+    @PostMapping("/register")
+    public String register(@ModelAttribute RegisterRequest request) {
+
+        authService.register(request);
+        return "redirect:/login";
+
+    }
+    @GetMapping("/login")
+    public String loginPage(){
+        return  "login";
+    }
+
 }
